@@ -33,3 +33,9 @@ bower.json
 
 # Ignore pow environment settings
 .powenv
+
+#Mac & Google Drive Specific
+Icon
+Icon?
+.DS_Store
+.DS_Store?
