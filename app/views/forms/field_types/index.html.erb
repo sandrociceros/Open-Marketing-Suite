@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Forms Field Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Shortcode</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forms_field_types.each do |forms_field_type| %>
+      <tr>
+        <td><%= forms_field_type.name %></td>
+        <td><%= forms_field_type.shortcode %></td>
+        <td><%= forms_field_type.description %></td>
+        <td><%= link_to 'Show', forms_field_type %></td>
+        <td><%= link_to 'Edit', edit_forms_field_type_path(forms_field_type) %></td>
+        <td><%= link_to 'Destroy', forms_field_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Field type', new_forms_field_type_path %>

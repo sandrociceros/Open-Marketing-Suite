@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+  position: 
+  set_id: 
+  field_type_id: 
+
+two:
+  title: MyText
+  position: 
+  set_id: 
+  field_type_id: 

@@ -1,0 +1,2 @@
+module Forms::FieldTypesHelper
+end

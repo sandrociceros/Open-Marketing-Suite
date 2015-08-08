@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   namespace :forms do
+    resources :field_types
+  end
+
+  namespace :forms do
+    resources :questions
+  end
+
+  namespace :forms do
     resources :sets
   end
 

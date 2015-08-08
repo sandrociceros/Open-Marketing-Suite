@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @forms_question.title %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @forms_question.position %>
+</p>
+
+<p>
+  <strong>Set:</strong>
+  <%= @forms_question.set %>
+</p>
+
+<p>
+  <strong>Field type:</strong>
+  <%= @forms_question.field_type %>
+</p>
+
+<%= link_to 'Edit', edit_forms_question_path(@forms_question) %> |
+<%= link_to 'Back', forms_questions_path %>

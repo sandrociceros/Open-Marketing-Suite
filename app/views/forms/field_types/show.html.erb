@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @forms_field_type.name %>
+</p>
+
+<p>
+  <strong>Shortcode:</strong>
+  <%= @forms_field_type.shortcode %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @forms_field_type.description %>
+</p>
+
+<%= link_to 'Edit', edit_forms_field_type_path(@forms_field_type) %> |
+<%= link_to 'Back', forms_field_types_path %>
