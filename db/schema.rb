@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150808190546) do
+ActiveRecord::Schema.define(version: 20150808190946) do
 
   create_table "forms_field_types", force: :cascade do |t|
     t.string   "name"
