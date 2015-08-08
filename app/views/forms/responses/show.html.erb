@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @forms_response.question %>
+</p>
+
+<p>
+  <strong>Set:</strong>
+  <%= @forms_response.set %>
+</p>
+
+<p>
+  <strong>Response text:</strong>
+  <%= @forms_response.response_text %>
+</p>
+
+<p>
+  <strong>Field type:</strong>
+  <%= @forms_response.field_type %>
+</p>
+
+<%= link_to 'Edit', edit_forms_response_path(@forms_response) %> |
+<%= link_to 'Back', forms_responses_path %>
