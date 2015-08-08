@@ -1,4 +1,5 @@
 class Forms::QuestionsController < ApplicationController
+  before_action :set_forms_set
   before_action :set_forms_question, only: [:show, :edit, :update, :destroy]
 
   # GET /forms/questions
@@ -14,7 +15,7 @@ class Forms::QuestionsController < ApplicationController
 
   # GET /forms/questions/new
   def new
-    @forms_question = Forms::Question.new
+    @forms_question = @forms_set.questions.new
   end
 
   # GET /forms/questions/1/edit
@@ -63,12 +64,17 @@ class Forms::QuestionsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
+    def set_forms_set
+      @forms_set = Forms::Set.find(params[:set_id])
+    end
+
     def set_forms_question
       @forms_question = Forms::Question.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def forms_question_params
-      params.require(:forms_question).permit(:title, :position, :forms_set_id, :forms_field_type_id)
+      params.require(:forms_question).permit(:title, :position, :set_id, :field_type_id)
     end
 end

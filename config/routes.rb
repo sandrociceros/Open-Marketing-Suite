@@ -5,10 +5,6 @@ Rails.application.routes.draw do
   end
 
   namespace :forms do
-    resources :responses
-  end
-
-  namespace :forms do
     resources :sets do
       resources :questions
       resources :responses

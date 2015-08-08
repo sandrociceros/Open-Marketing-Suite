@@ -1,4 +1,4 @@
 class Forms::Question < ActiveRecord::Base
-  belongs_to :forms_set
-  belongs_to :forms_field_type
+  belongs_to :set
+  belongs_to :field_type
 end

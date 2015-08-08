@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150808190946) do
+ActiveRecord::Schema.define(version: 20150808192513) do
 
   create_table "forms_field_types", force: :cascade do |t|
     t.string   "name"
@@ -24,27 +24,14 @@ ActiveRecord::Schema.define(version: 20150808190946) do
   create_table "forms_questions", force: :cascade do |t|
     t.text     "title"
     t.integer  "position"
-    t.integer  "forms_set_id"
-    t.integer  "forms_field_type_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.integer  "set_id"
+    t.integer  "field_type_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
-  add_index "forms_questions", ["forms_field_type_id"], name: "index_forms_questions_on_forms_field_type_id"
-  add_index "forms_questions", ["forms_set_id"], name: "index_forms_questions_on_forms_set_id"
-
-  create_table "forms_responses", force: :cascade do |t|
-    t.integer  "forms_question_id"
-    t.integer  "forms_set_id"
-    t.text     "response_text"
-    t.integer  "forms_field_type_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-  end
-
-  add_index "forms_responses", ["forms_field_type_id"], name: "index_forms_responses_on_forms_field_type_id"
-  add_index "forms_responses", ["forms_question_id"], name: "index_forms_responses_on_forms_question_id"
-  add_index "forms_responses", ["forms_set_id"], name: "index_forms_responses_on_forms_set_id"
+  add_index "forms_questions", ["field_type_id"], name: "index_forms_questions_on_field_type_id"
+  add_index "forms_questions", ["set_id"], name: "index_forms_questions_on_set_id"
 
   create_table "forms_sets", force: :cascade do |t|
     t.string   "name"

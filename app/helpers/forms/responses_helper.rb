@@ -1,2 +1,0 @@
-module Forms::ResponsesHelper
-end

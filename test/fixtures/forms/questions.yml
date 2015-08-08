@@ -3,11 +3,11 @@
 one:
   title: MyText
   position: 1
-  forms_set_id: 
-  forms_field_type_id: 
+  set_id: 
+  field_type_id: 
 
 two:
   title: MyText
   position: 1
-  forms_set_id: 
-  forms_field_type_id: 
+  set_id: 
+  field_type_id: 

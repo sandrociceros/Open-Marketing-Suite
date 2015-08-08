@@ -7,8 +7,8 @@
     <tr>
       <th>Title</th>
       <th>Position</th>
-      <th>Forms set</th>
-      <th>Forms field type</th>
+      <th>Set</th>
+      <th>Field type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,8 +18,8 @@
       <tr>
         <td><%= forms_question.title %></td>
         <td><%= forms_question.position %></td>
-        <td><%= forms_question.forms_set %></td>
-        <td><%= forms_question.forms_field_type %></td>
+        <td><%= forms_question.set %></td>
+        <td><%= forms_question.field_type %></td>
         <td><%= link_to 'Show', forms_question %></td>
         <td><%= link_to 'Edit', edit_forms_question_path(forms_question) %></td>
         <td><%= link_to 'Destroy', forms_question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
