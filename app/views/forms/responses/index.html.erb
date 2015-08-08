@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Question</th>
-      <th>Set</th>
+      <th>Forms question</th>
+      <th>Forms set</th>
       <th>Response text</th>
-      <th>Field type</th>
+      <th>Forms field type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +16,10 @@
   <tbody>
     <% @forms_responses.each do |forms_response| %>
       <tr>
-        <td><%= forms_response.question %></td>
-        <td><%= forms_response.set %></td>
+        <td><%= forms_response.forms_question %></td>
+        <td><%= forms_response.forms_set %></td>
         <td><%= forms_response.response_text %></td>
-        <td><%= forms_response.field_type %></td>
+        <td><%= forms_response.forms_field_type %></td>
         <td><%= link_to 'Show', forms_response %></td>
         <td><%= link_to 'Edit', edit_forms_response_path(forms_response) %></td>
         <td><%= link_to 'Destroy', forms_response, method: :delete, data: { confirm: 'Are you sure?' } %></td>

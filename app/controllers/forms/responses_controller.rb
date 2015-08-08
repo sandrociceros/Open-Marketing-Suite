@@ -69,6 +69,6 @@ class Forms::ResponsesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def forms_response_params
-      params.require(:forms_response).permit(:question_id, :set_id, :response_text, :field_type_id)
+      params.require(:forms_response).permit(:forms_question_id, :forms_set_id, :response_text, :forms_field_type_id)
     end
 end

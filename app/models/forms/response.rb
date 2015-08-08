@@ -1,5 +1,5 @@
 class Forms::Response < ActiveRecord::Base
-  belongs_to :set
-  belongs_to :field_type
-  belongs_to :question
+  belongs_to :forms_question
+  belongs_to :forms_set
+  belongs_to :forms_field_type
 end
