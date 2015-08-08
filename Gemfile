@@ -7,8 +7,8 @@ gem 'puma'
 gem 'rapidfire'
 
 gem 'haml'
-
-gem 'compass-rails'
+#For compatibility with sprockets - https://github.com/rails/sass-rails/issues/324
+gem 'compass-rails', github: 'Compass/compass-rails'
 
 gem "rails-erd"
 

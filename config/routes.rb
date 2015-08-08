@@ -1,19 +1,14 @@
 Rails.application.routes.draw do
-  namespace :forms do
-    resources :responses
-  end
 
   namespace :forms do
+    resources :sets do
+      resources :questions
+      resources :responses
+    end
+    #Field types do not belong to any model
     resources :field_types
   end
 
-  namespace :forms do
-    resources :questions
-  end
-
-  namespace :forms do
-    resources :sets
-  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
