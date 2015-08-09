@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150808192513) do
+ActiveRecord::Schema.define(version: 20150809031856) do
 
   create_table "forms_field_types", force: :cascade do |t|
     t.string   "name"
@@ -26,8 +26,9 @@ ActiveRecord::Schema.define(version: 20150808192513) do
     t.integer  "position"
     t.integer  "set_id"
     t.integer  "field_type_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "placeholder_text"
   end
 
   add_index "forms_questions", ["field_type_id"], name: "index_forms_questions_on_field_type_id"

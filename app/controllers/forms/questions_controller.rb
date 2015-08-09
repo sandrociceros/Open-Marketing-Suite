@@ -1,5 +1,5 @@
 class Forms::QuestionsController < ApplicationController
-  before_action :set_forms_set
+  before_action :set_forms_set, only: [:new, :show, :edit, :update, :destroy]
   before_action :set_forms_question, only: [:show, :edit, :update, :destroy]
 
   # GET /forms/questions
