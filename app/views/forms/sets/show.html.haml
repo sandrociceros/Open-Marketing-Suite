@@ -8,12 +8,15 @@
 
 = link_to 'Edit', edit_forms_set_path(@forms_set)
 
+-form_for @forms_submission do |f|
+  .responses.build
+
 - @forms_questions.each do |forms_question|
   %div
     %p= forms_question.position
     %label= forms_question.title
     %br/
-    response = forms_question.build_response
+
 
     %input{:type => "#{forms_question.field_type.shortcode}", :placeholder=>"#{forms_question.placeholder_text}"}
 

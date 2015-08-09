@@ -11,6 +11,7 @@ class Forms::SetsController < ApplicationController
   # GET /forms/sets/1.json
   def show
     @forms_questions =  @forms_set.questions
+    @forms_submission = @forms_set.submissions.new
   end
 
   # GET /forms/sets/new
@@ -67,7 +68,7 @@ class Forms::SetsController < ApplicationController
     def set_forms_set
       @forms_set = Forms::Set.find(params[:id])
     end
-    
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def forms_set_params
       params.require(:forms_set).permit(:name, :description)

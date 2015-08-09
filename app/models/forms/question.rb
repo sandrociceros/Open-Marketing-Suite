@@ -4,6 +4,6 @@ class Forms::Question < ActiveRecord::Base
   has_many :responses
 
   def build_response
-    self.responses.new({:set => self.set, :question => self})
+    self.responses.new({:question => self})
   end
 end
