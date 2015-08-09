@@ -15,7 +15,7 @@ class Forms::QuestionsController < ApplicationController
 
   # GET /forms/questions/new
   def new
-    @forms_question = Forms::Question.new
+    @forms_question = @forms_set.questions.new
   end
 
   # GET /forms/questions/1/edit
@@ -64,6 +64,11 @@ class Forms::QuestionsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
+    def set_forms_set
+      @forms_set = Forms::Set.find(params[:set_id])
+    end
+
     def set_forms_question
       @forms_question = Forms::Question.find(params[:id])
     end
