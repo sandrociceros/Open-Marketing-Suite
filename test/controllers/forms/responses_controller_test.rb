@@ -18,7 +18,7 @@ class Forms::ResponsesControllerTest < ActionController::TestCase
 
   test "should create forms_response" do
     assert_difference('Forms::Response.count') do
-      post :create, forms_response: { entry_id: @forms_response.entry_id, field_type_id: @forms_response.field_type_id, question_id: @forms_response.question_id, response_text: @forms_response.response_text, set_id: @forms_response.set_id }
+      post :create, forms_response: { entry_id: @forms_response.entry_id, field_type_id: @forms_response.field_type_id, question_id: @forms_response.question_id, response_text: @forms_response.response_text }
     end
 
     assert_redirected_to forms_response_path(assigns(:forms_response))
@@ -35,7 +35,7 @@ class Forms::ResponsesControllerTest < ActionController::TestCase
   end
 
   test "should update forms_response" do
-    patch :update, id: @forms_response, forms_response: { entry_id: @forms_response.entry_id, field_type_id: @forms_response.field_type_id, question_id: @forms_response.question_id, response_text: @forms_response.response_text, set_id: @forms_response.set_id }
+    patch :update, id: @forms_response, forms_response: { entry_id: @forms_response.entry_id, field_type_id: @forms_response.field_type_id, question_id: @forms_response.question_id, response_text: @forms_response.response_text }
     assert_redirected_to forms_response_path(assigns(:forms_response))
   end
 

@@ -14,6 +14,7 @@
     %label= forms_question.title
     %br/
     response = forms_question.build_response
+
     %input{:type => "#{forms_question.field_type.shortcode}", :placeholder=>"#{forms_question.placeholder_text}"}
 
 \#{link_to 'Back', forms_sets_path}

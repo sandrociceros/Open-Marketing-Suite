@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Set</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +13,7 @@
   <tbody>
     <% @forms_entries.each do |forms_entry| %>
       <tr>
+        <td><%= forms_entry.set %></td>
         <td><%= link_to 'Show', forms_entry %></td>
         <td><%= link_to 'Edit', edit_forms_entry_path(forms_entry) %></td>
         <td><%= link_to 'Destroy', forms_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>

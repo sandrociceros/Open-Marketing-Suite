@@ -18,7 +18,7 @@ class Forms::EntriesControllerTest < ActionController::TestCase
 
   test "should create forms_entry" do
     assert_difference('Forms::Entry.count') do
-      post :create, forms_entry: {  }
+      post :create, forms_entry: { set_id: @forms_entry.set_id }
     end
 
     assert_redirected_to forms_entry_path(assigns(:forms_entry))
@@ -35,7 +35,7 @@ class Forms::EntriesControllerTest < ActionController::TestCase
   end
 
   test "should update forms_entry" do
-    patch :update, id: @forms_entry, forms_entry: {  }
+    patch :update, id: @forms_entry, forms_entry: { set_id: @forms_entry.set_id }
     assert_redirected_to forms_entry_path(assigns(:forms_entry))
   end
 

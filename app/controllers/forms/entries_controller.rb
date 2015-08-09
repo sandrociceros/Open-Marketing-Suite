@@ -69,6 +69,6 @@ class Forms::EntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def forms_entry_params
-      params[:forms_entry]
+      params.require(:forms_entry).permit(:set_id)
     end
 end

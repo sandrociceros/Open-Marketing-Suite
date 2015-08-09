@@ -2,14 +2,12 @@
 
 one:
   question_id: 
-  set_id: 
   response_text: MyText
   field_type_id: 
   entry_id: 
 
 two:
   question_id: 
-  set_id: 
   response_text: MyText
   field_type_id: 
   entry_id: 
