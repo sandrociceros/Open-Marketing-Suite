@@ -14,10 +14,6 @@ gem "rails-erd"
 #Testing
 gem 'capybara'
 
-##### FOR TRAVIS ######
-
-gem "byebug"
-
 ##### DEFAULT GEMS ######
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
