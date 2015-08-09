@@ -1,6 +1,6 @@
 class Forms::ResponseSerializer < ActiveModel::Serializer
-  attributes :id, :response_text
+  attributes :id, :value
   has_one :question
   has_one :field_type
-  has_one :entry
+  has_one :submission
 end

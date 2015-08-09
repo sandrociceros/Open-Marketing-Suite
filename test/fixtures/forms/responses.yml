@@ -2,12 +2,12 @@
 
 one:
   question_id: 
-  response_text: MyText
+  value: MyText
   field_type_id: 
-  entry_id: 
+  submission_id: 
 
 two:
   question_id: 
-  response_text: MyText
+  value: MyText
   field_type_id: 
-  entry_id: 
+  submission_id: 

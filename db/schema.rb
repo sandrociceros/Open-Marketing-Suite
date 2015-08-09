@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809152726) do
-
-  create_table "forms_entries", force: :cascade do |t|
-    t.integer  "set_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "forms_entries", ["set_id"], name: "index_forms_entries_on_set_id"
+ActiveRecord::Schema.define(version: 20150809153215) do
 
   create_table "forms_field_types", force: :cascade do |t|
     t.string   "name"
@@ -44,16 +36,16 @@ ActiveRecord::Schema.define(version: 20150809152726) do
 
   create_table "forms_responses", force: :cascade do |t|
     t.integer  "question_id"
-    t.text     "response_text"
+    t.text     "value"
     t.integer  "field_type_id"
-    t.integer  "entry_id"
+    t.integer  "submission_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
-  add_index "forms_responses", ["entry_id"], name: "index_forms_responses_on_entry_id"
   add_index "forms_responses", ["field_type_id"], name: "index_forms_responses_on_field_type_id"
   add_index "forms_responses", ["question_id"], name: "index_forms_responses_on_question_id"
+  add_index "forms_responses", ["submission_id"], name: "index_forms_responses_on_submission_id"
 
   create_table "forms_sets", force: :cascade do |t|
     t.string   "name"
