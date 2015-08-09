@@ -1,2 +1,10 @@
+#Added from https://github.com/rails/rails/blob/master/.travis.yml
 language: ruby
 script: 'true'
+sudo: false
+before_install:
+  - gem install bundler
+  - "rm ${BUNDLE_GEMFILE}.lock"
+rvm:
+  - 2.2.2
+  - ruby-head
