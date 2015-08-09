@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   namespace :forms do
-    resources :entries
+    resources :submissions
   end
 
   namespace :forms do

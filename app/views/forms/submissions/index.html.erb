@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Forms Submissions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Set</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forms_submissions.each do |forms_submission| %>
+      <tr>
+        <td><%= forms_submission.set %></td>
+        <td><%= link_to 'Show', forms_submission %></td>
+        <td><%= link_to 'Edit', edit_forms_submission_path(forms_submission) %></td>
+        <td><%= link_to 'Destroy', forms_submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Submission', new_forms_submission_path %>
