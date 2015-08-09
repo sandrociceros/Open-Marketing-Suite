@@ -1,5 +1,5 @@
 class Forms::QuestionsController < ApplicationController
-  before_action :set_forms_set, only: [:new, :show, :edit, :update, :destroy]
+  before_action :set_forms_set, only: [:new, :create, :show, :edit, :update, :destroy]
   before_action :set_forms_question, only: [:show, :edit, :update, :destroy]
 
   # GET /forms/questions
@@ -25,7 +25,7 @@ class Forms::QuestionsController < ApplicationController
   # POST /forms/questions
   # POST /forms/questions.json
   def create
-    @forms_question = Forms::Question.new(forms_question_params)
+    @forms_question = @forms_set.questions.new(forms_question_params)
 
     respond_to do |format|
       if @forms_question.save
