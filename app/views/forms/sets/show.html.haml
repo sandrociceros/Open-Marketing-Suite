@@ -8,6 +8,11 @@
 
 = link_to 'Edit', edit_forms_set_path(@forms_set)
 
--@forms_questions
+- @forms_questions.each do |forms_question|
+  %div
+    %p= forms_question.position
+    %label= forms_question.title
+    %p= forms_question.field_type
+    %p= forms_question.placeholder_text
 
 \#{link_to 'Back', forms_sets_path}
