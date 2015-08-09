@@ -1,7 +1,7 @@
 class Forms::Question < ActiveRecord::Base
   belongs_to :set
   belongs_to :field_type
-  has_many :responses
+  has_one :responses
 
   def build_response
     self.responses.new({:question => self})

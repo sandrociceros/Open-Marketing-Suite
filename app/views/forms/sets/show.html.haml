@@ -8,16 +8,14 @@
 
 = link_to 'Edit', edit_forms_set_path(@forms_set)
 
--form_for @forms_submission do |f|
-  .responses.build
-
-- @forms_questions.each do |forms_question|
-  %div
-    %p= forms_question.position
-    %label= forms_question.title
-    %br/
-
-
-    %input{:type => "#{forms_question.field_type.shortcode}", :placeholder=>"#{forms_question.placeholder_text}"}
-
-\#{link_to 'Back', forms_sets_path}
+=form_for @forms_submission do |f|
+  -@forms_questions.each do |forms_question|
+    %div
+      %label
+        %span
+          =forms_question.position
+        =forms_question.title
+      %br/
+      =fields_for :responses do |r|
+        = r.text_field :value, :placeholder=>"#{forms_question.placeholder_text}"
+  =f.submit "Save"
