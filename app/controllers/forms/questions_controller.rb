@@ -29,7 +29,7 @@ class Forms::QuestionsController < ApplicationController
 
     respond_to do |format|
       if @forms_question.save
-        format.html { redirect_to @forms_question, notice: 'Question was successfully created.' }
+        format.html { redirect_to forms_set_questions_path, notice: 'Question was successfully created.' }
         format.json { render :show, status: :created, location: @forms_question }
       else
         format.html { render :new }
