@@ -1,11 +1,11 @@
 class Forms::QuestionsController < ApplicationController
-  before_action :set_forms_set, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :set_forms_set
   before_action :set_forms_question, only: [:show, :edit, :update, :destroy]
 
   # GET /forms/questions
   # GET /forms/questions.json
   def index
-    @forms_questions = Forms::Question.all
+    @forms_questions =  @forms_set.questions
   end
 
   # GET /forms/questions/1
