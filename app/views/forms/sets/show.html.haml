@@ -8,7 +8,7 @@
 
 = link_to 'Edit', edit_forms_set_path(@forms_set)
 
-=form_for @forms_submission do |f|
+=form_for @forms_submission, :url => forms_set_submissions_path(@forms_set,@forms_submission) do |f|
   -@forms_questions.each do |forms_question|
     %div
       %label

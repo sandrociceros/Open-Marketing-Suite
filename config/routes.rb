@@ -1,17 +1,14 @@
 Rails.application.routes.draw do
 
-  namespace :forms do
-    resources :responses
-  end
 
   namespace :forms do
-    resources :submissions
   end
 
   namespace :forms do
     resources :sets do
       resources :questions
       resources :responses
+      resources :submissions
     end
     #Field types do not belong to any model
     resources :field_types
