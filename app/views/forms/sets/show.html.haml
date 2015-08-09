@@ -12,7 +12,7 @@
   %div
     %p= forms_question.position
     %label= forms_question.title
-    %p= forms_question.field_type
-    %p= forms_question.placeholder_text
+    %br/
+    %input{:type => "#{forms_question.field_type.shortcode}", :placeholder=>"#{forms_question.placeholder_text}"}
 
 \#{link_to 'Back', forms_sets_path}
