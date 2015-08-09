@@ -5,6 +5,7 @@ class CreateFormsQuestions < ActiveRecord::Migration
       t.integer :position
       t.references :set, index: true
       t.references :field_type, index: true
+      t.string :placeholder_text
 
       t.timestamps null: false
     end

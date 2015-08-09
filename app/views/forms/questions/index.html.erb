@@ -9,6 +9,7 @@
       <th>Position</th>
       <th>Set</th>
       <th>Field type</th>
+      <th>Placeholder text</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
         <td><%= forms_question.position %></td>
         <td><%= forms_question.set %></td>
         <td><%= forms_question.field_type %></td>
+        <td><%= forms_question.placeholder_text %></td>
         <td><%= link_to 'Show', forms_question %></td>
         <td><%= link_to 'Edit', edit_forms_question_path(forms_question) %></td>
         <td><%= link_to 'Destroy', forms_question, method: :delete, data: { confirm: 'Are you sure?' } %></td>

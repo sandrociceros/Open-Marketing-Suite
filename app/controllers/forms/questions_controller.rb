@@ -15,7 +15,7 @@ class Forms::QuestionsController < ApplicationController
 
   # GET /forms/questions/new
   def new
-    @forms_question = @forms_set.questions.new
+    @forms_question = Forms::Question.new
   end
 
   # GET /forms/questions/1/edit
@@ -64,17 +64,12 @@ class Forms::QuestionsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-
-    def set_forms_set
-      @forms_set = Forms::Set.find(params[:set_id])
-    end
-
     def set_forms_question
       @forms_question = Forms::Question.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def forms_question_params
-      params.require(:forms_question).permit(:title, :position, :set_id, :field_type_id)
+      params.require(:forms_question).permit(:title, :position, :set_id, :field_type_id, :placeholder_text)
     end
 end

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Forms Responses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Set</th>
+      <th>Response text</th>
+      <th>Response boolean</th>
+      <th>Response selection</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forms_responses.each do |forms_response| %>
+      <tr>
+        <td><%= forms_response.question %></td>
+        <td><%= forms_response.set %></td>
+        <td><%= forms_response.response_text %></td>
+        <td><%= forms_response.response_boolean %></td>
+        <td><%= forms_response.response_selection %></td>
+        <td><%= link_to 'Show', forms_response %></td>
+        <td><%= link_to 'Edit', edit_forms_response_path(forms_response) %></td>
+        <td><%= link_to 'Destroy', forms_response, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Response', new_forms_response_path %>

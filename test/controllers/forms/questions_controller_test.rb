@@ -18,7 +18,7 @@ class Forms::QuestionsControllerTest < ActionController::TestCase
 
   test "should create forms_question" do
     assert_difference('Forms::Question.count') do
-      post :create, forms_question: { field_type_id: @forms_question.field_type_id, position: @forms_question.position, set_id: @forms_question.set_id, title: @forms_question.title }
+      post :create, forms_question: { field_type_id: @forms_question.field_type_id, placeholder_text: @forms_question.placeholder_text, position: @forms_question.position, set_id: @forms_question.set_id, title: @forms_question.title }
     end
 
     assert_redirected_to forms_question_path(assigns(:forms_question))
@@ -35,7 +35,7 @@ class Forms::QuestionsControllerTest < ActionController::TestCase
   end
 
   test "should update forms_question" do
-    patch :update, id: @forms_question, forms_question: { field_type_id: @forms_question.field_type_id, position: @forms_question.position, set_id: @forms_question.set_id, title: @forms_question.title }
+    patch :update, id: @forms_question, forms_question: { field_type_id: @forms_question.field_type_id, placeholder_text: @forms_question.placeholder_text, position: @forms_question.position, set_id: @forms_question.set_id, title: @forms_question.title }
     assert_redirected_to forms_question_path(assigns(:forms_question))
   end
 
