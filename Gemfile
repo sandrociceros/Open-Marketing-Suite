@@ -12,6 +12,10 @@ gem 'compass-rails', github: 'Compass/compass-rails'
 
 gem "rails-erd"
 
+##### FOR TRAVIS ######
+
+gem "byebug"
+
 ##### DEFAULT GEMS ######
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
