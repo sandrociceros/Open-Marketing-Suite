@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Title:
+  = @forms_question.title
+%p
+  %strong Position:
+  = @forms_question.position
+%p
+  %strong Set:
+  = @forms_question.set
+%p
+  %strong Field type:
+  = @forms_question.field_type
+%p
+  %strong Placeholder text:
+  = @forms_question.placeholder_text
+= link_to 'Edit', edit_forms_question_path(@forms_question)
+|
+\#{link_to 'Back', forms_questions_path}

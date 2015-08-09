@@ -11,6 +11,7 @@ class Forms::QuestionsController < ApplicationController
   # GET /forms/questions/1
   # GET /forms/questions/1.json
   def show
+    @forms_questions =  @forms_set.questions
   end
 
   # GET /forms/questions/new

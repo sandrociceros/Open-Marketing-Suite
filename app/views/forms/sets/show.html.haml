@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @forms_set.name
+%p
+  %strong Description:
+  = @forms_set.description
+
+= link_to 'Edit', edit_forms_set_path(@forms_set)
+
+-@forms_questions
+
+\#{link_to 'Back', forms_sets_path}
