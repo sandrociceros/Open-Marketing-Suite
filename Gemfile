@@ -11,8 +11,11 @@ gem 'haml'
 gem 'compass-rails', github: 'Compass/compass-rails'
 
 gem "rails-erd"
-#Testing
+
+#Gems for testing
 gem 'capybara'
+
+gem 'cucumber'
 
 ##### DEFAULT GEMS ######
 
