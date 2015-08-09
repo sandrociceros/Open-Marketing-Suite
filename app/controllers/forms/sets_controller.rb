@@ -10,6 +10,7 @@ class Forms::SetsController < ApplicationController
   # GET /forms/sets/1
   # GET /forms/sets/1.json
   def show
+    @forms_questions =  @forms_set.questions
   end
 
   # GET /forms/sets/new
