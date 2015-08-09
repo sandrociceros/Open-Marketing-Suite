@@ -11,6 +11,8 @@ gem 'haml'
 gem 'compass-rails', github: 'Compass/compass-rails'
 
 gem "rails-erd"
+#Testing
+gem 'capybara'
 
 ##### FOR TRAVIS ######
 
