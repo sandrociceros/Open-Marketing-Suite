@@ -67,7 +67,7 @@ class Forms::SetsController < ApplicationController
     def set_forms_set
       @forms_set = Forms::Set.find(params[:id])
     end
-
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def forms_set_params
       params.require(:forms_set).permit(:name, :description)

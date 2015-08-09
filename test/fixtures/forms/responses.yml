@@ -4,12 +4,12 @@ one:
   question_id: 
   set_id: 
   response_text: MyText
-  response_boolean: false
-  response_selection: 1
+  field_type_id: 
+  entry_id: 
 
 two:
   question_id: 
   set_id: 
   response_text: MyText
-  response_boolean: false
-  response_selection: 1
+  field_type_id: 
+  entry_id: 

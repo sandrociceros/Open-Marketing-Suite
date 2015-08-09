@@ -1,0 +1,2 @@
+module Forms::EntriesHelper
+end
