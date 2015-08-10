@@ -1,0 +1,16 @@
+%p#notice= notice
+%h1 Listing Forms Submissions
+%table
+  %thead
+    %tr
+      %th Set
+      %th{:colspan => "3"}
+  %tbody
+    - @forms_submissions.each do |forms_submission|
+      %tr
+        %td= forms_submission.set
+        %td= link_to 'Show', forms_submission
+        %td= link_to 'Edit', edit_forms_submission_path(forms_submission)
+        %td= link_to 'Destroy', forms_submission, method: :delete, data: { confirm: 'Are you sure?' }
+%br
+  = link_to 'New Submission', new_forms_set_submission_path

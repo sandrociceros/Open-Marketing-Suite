@@ -1,0 +1,7 @@
+%p#notice= notice
+%p
+  %strong Set:
+  = @forms_submission.set
+= link_to 'Edit', edit_forms_submission_path(@forms_submission)
+
+= link_to 'Back', forms_submissions_path
