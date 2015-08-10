@@ -70,7 +70,7 @@ class Forms::QuestionsController < ApplicationController
     end
 
     def set_forms_question
-      @forms_question = Forms::Question.find(params[:id])
+      @forms_question = @forms_set.questions.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
