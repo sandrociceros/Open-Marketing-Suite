@@ -1,10 +1,11 @@
 class Forms::SubmissionsController < ApplicationController
+  before_action :set_forms_set
   before_action :set_forms_submission, only: [:show, :edit, :update, :destroy]
 
   # GET /forms/submissions
   # GET /forms/submissions.json
   def index
-    @forms_submissions = Forms::Submission.all
+    @forms_submissions = @forms_set.submissions.all
   end
 
   # GET /forms/submissions/1
@@ -14,7 +15,7 @@ class Forms::SubmissionsController < ApplicationController
 
   # GET /forms/submissions/new
   def new
-    @forms_submission = Forms::Submission.new
+    @forms_submission = @forms_set.submissions.new
   end
 
   # GET /forms/submissions/1/edit
@@ -24,7 +25,7 @@ class Forms::SubmissionsController < ApplicationController
   # POST /forms/submissions
   # POST /forms/submissions.json
   def create
-    @forms_submission = Forms::Submission.new(forms_submission_params)
+    @forms_submission = @forms_set.submissions.new(forms_submission_params)
 
     respond_to do |format|
       if @forms_submission.save
@@ -63,8 +64,12 @@ class Forms::SubmissionsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_forms_set
+      @forms_set = Forms::Set.find(params[:set_id])
+    end
+
     def set_forms_submission
-      @forms_submission = Forms::Submission.find(params[:id])
+      @forms_submission = @forms_set.submissions.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

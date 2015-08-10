@@ -8,14 +8,18 @@
 
 = link_to 'Edit', edit_forms_set_path(@forms_set)
 
-=form_for @forms_submission, :url => forms_set_submissions_path(@forms_set, @forms_submission) do |f|
-  -@forms_questions.each do |forms_question|
-    %div
-      %label
-        %span
-          =forms_question.position
-        =forms_question.title
-      %br/
-      =fields_for :responses do |r|
-        = r.text_field :value, :placeholder=>"#{forms_question.placeholder_text}"
+//TODO: Fix this
+=form_for @forms_set, :url => forms_set_submissions_path(@forms_set, @forms_submission) do |f|
+  =f.fields_for :submission do |s|
+    
+    =s.fields_for @forms_submission.responses.build do |r|
+      -@forms_questions.each do |forms_question|
+        %div
+          %label
+            %span
+              =forms_question.position
+            =forms_question.title
+          %br/
+          = r.text_field :value, :placeholder=>"#{forms_question.placeholder_text}"
+
   =f.submit "Save"
