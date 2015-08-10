@@ -1,4 +1,4 @@
-= form_for(@forms_submission) do |f|
+= form_for @forms_submission, :url => forms_set_submissions_path do |f|
   - if @forms_submission.errors.any?
     #error_explanation
       %h2
@@ -7,9 +7,18 @@
       %ul
         - @forms_submission.errors.full_messages.each do |message|
           %li= message
-  .field
-    = f.label :set_id
-    %br
-      = f.text_field :set_id
+  -@forms_responses.each do |response|
+    =f.fields_for "#{response.question.id}", response do |r|
+      = r.text_field :value, :placeholder=>"#{response.question.placeholder_text}"
+      %br/
   .actions
     = f.submit
+-#
+  -@forms_questions.each do |forms_question|
+    %div
+      %label
+        %span
+          =forms_question.position
+        =forms_question.title
+      %br/
+      = r.text_field :value, :placeholder=>"#{forms_question.placeholder_text}"

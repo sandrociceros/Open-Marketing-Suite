@@ -1,5 +1,6 @@
 class Forms::SubmissionsController < ApplicationController
   before_action :set_forms_set
+  before_action :set_forms_questions, only: [:new]
   before_action :set_forms_submission, only: [:show, :edit, :update, :destroy]
 
   # GET /forms/submissions
@@ -16,6 +17,7 @@ class Forms::SubmissionsController < ApplicationController
   # GET /forms/submissions/new
   def new
     @forms_submission = @forms_set.submissions.new
+    @forms_responses = @forms_submission.build_responses
   end
 
   # GET /forms/submissions/1/edit
@@ -29,7 +31,7 @@ class Forms::SubmissionsController < ApplicationController
 
     respond_to do |format|
       if @forms_submission.save
-        format.html { redirect_to @forms_submission, notice: 'Submission was successfully created.' }
+        format.html { redirect_to forms_set_submissions_path, notice: 'Submission was successfully created.' }
         format.json { render :show, status: :created, location: @forms_submission }
       else
         format.html { render :new }
@@ -66,6 +68,10 @@ class Forms::SubmissionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_forms_set
       @forms_set = Forms::Set.find(params[:set_id])
+    end
+
+    def set_forms_questions
+      @forms_questions = @forms_set.questions
     end
 
     def set_forms_submission
