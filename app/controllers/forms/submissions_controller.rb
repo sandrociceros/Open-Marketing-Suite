@@ -22,6 +22,7 @@ class Forms::SubmissionsController < ApplicationController
 
   # GET /forms/submissions/1/edit
   def edit
+    @forms_responses = @forms_submission.responses
   end
 
   # POST /forms/submissions
@@ -59,7 +60,7 @@ class Forms::SubmissionsController < ApplicationController
   def destroy
     @forms_submission.destroy
     respond_to do |format|
-      format.html { redirect_to forms_submissions_url, notice: 'Submission was successfully destroyed.' }
+      format.html { redirect_to forms_set_submissions_path, notice: 'Submission was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -80,6 +81,6 @@ class Forms::SubmissionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def forms_submission_params
-      params.require(:forms_submission).permit(:set_id)
+      params.require(:forms_submission).permit(:set_id, :responses_attributes => [:value])
     end
 end

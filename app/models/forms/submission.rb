@@ -2,6 +2,7 @@ class Forms::Submission < ActiveRecord::Base
   belongs_to :set
   has_many :responses
   accepts_nested_attributes_for :responses
+  
   def build_responses
     questions = self.set.questions
     questions.each do |q|

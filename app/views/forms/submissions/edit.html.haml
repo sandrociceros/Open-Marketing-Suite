@@ -1,5 +1,5 @@
 %h1 Editing Forms Submission
 = render 'form'
-= link_to 'Show', @forms_submission
+= link_to 'Show', forms_set_submission_path(@forms_set, @forms_submission)
 |
-\#{link_to 'Back', forms_submissions_path}
+= link_to 'Back', forms_set_submissions_path

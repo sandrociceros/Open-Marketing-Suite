@@ -8,7 +8,7 @@
         - @forms_submission.errors.full_messages.each do |message|
           %li= message
   -@forms_responses.each do |response|
-    =f.fields_for "#{response.question.id}", response do |r|
+    =f.fields_for :responses, response do |r|
       = r.text_field :value, :placeholder=>"#{response.question.placeholder_text}"
       %br/
   .actions
