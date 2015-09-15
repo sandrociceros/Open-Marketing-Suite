@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :regexes
+
   namespace :forms do
   end
 

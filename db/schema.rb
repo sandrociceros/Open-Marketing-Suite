@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809153215) do
+ActiveRecord::Schema.define(version: 20150915112242) do
 
   create_table "forms_field_types", force: :cascade do |t|
     t.string   "name"
@@ -29,9 +29,11 @@ ActiveRecord::Schema.define(version: 20150809153215) do
     t.string   "placeholder_text"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "regex_id"
   end
 
   add_index "forms_questions", ["field_type_id"], name: "index_forms_questions_on_field_type_id"
+  add_index "forms_questions", ["regex_id"], name: "index_forms_questions_on_regex_id"
   add_index "forms_questions", ["set_id"], name: "index_forms_questions_on_set_id"
 
   create_table "forms_responses", force: :cascade do |t|
@@ -61,5 +63,12 @@ ActiveRecord::Schema.define(version: 20150809153215) do
   end
 
   add_index "forms_submissions", ["set_id"], name: "index_forms_submissions_on_set_id"
+
+  create_table "regexes", force: :cascade do |t|
+    t.string   "name"
+    t.string   "regex"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
