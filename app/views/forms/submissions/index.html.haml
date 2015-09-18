@@ -12,7 +12,7 @@
         %td= forms_submission.set
         %td{:colspan => "3"}
           = forms_submission.responses.each do |response|
-            response.value
+            -# = response.value
         %td= link_to 'Show', forms_set_submission_path(@forms_set, forms_submission)
         %td= link_to 'Edit', edit_forms_set_submission_path(@forms_set, forms_submission)
         %td= link_to 'Destroy', forms_set_submission_path(@forms_set, forms_submission), method: :delete, data: { confirm: 'Are you sure?' }

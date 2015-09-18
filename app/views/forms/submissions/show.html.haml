@@ -1,7 +1,22 @@
 %p#notice= notice
 %p
-  %strong Set:
-  = @forms_submission.set
-= link_to 'Edit', edit_forms_submission_path(@forms_submission)
+  %strong Form Set:
+  = @forms_submission.set.name
 
-= link_to 'Back', forms_submissions_path
+%table
+  %thead
+    %tr
+      %th Response
+  %tbody
+    - @forms_submission.responses.each do |response|
+      %tr
+        %td
+          = response.question
+          -# = response.value
+        %td{:colspan => "3"}
+
+
+
+= link_to 'Edit', edit_forms_set_submission_path(@forms_set, @forms_submission)
+
+= link_to 'Back', forms_set_submissions_path

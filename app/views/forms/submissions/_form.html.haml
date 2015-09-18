@@ -8,8 +8,11 @@
         - @forms_submission.errors.full_messages.each do |message|
           %li= message
   -@forms_responses.each do |response|
-    =f.fields_for :responses, response do |r|
-      = r.text_field :value, :placeholder=>"#{response.question.placeholder_text}"
+    =f.fields_for :questions, response.question do |r|
+      = response.question.title
+      %br/
+      = r.text_field :title
+      -# , :placeholder=>"#{response.question.placeholder_text}"
       %br/
   .actions
     = f.submit
